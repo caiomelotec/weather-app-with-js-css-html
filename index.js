@@ -24,7 +24,12 @@ function updateTheUI(data) {
   conditionText.innerText = data.current.condition.text;
   country.innerText = data.location.country;
   region.innerText = data.location.region;
+  // getCurrentDateAndTime(data.location.tz_id);
+
+  // changes the time
+
   getCurrentDateAndTime(data.location.tz_id);
+
   const shades = ["black", "white"];
 
   function updateTextshade(shade) {
@@ -56,7 +61,8 @@ function updateTheUI(data) {
   } else if (
     data.current.condition.text === "Moderate rain at times" ||
     data.current.condition.text === "Moderate rain" ||
-    data.current.condition.text === "Light rain"
+    data.current.condition.text === "Light rain" ||
+    data.current.condition.text === "Light rain shower"
   ) {
     changeBackgroundimg(backgroundImgs[1]);
     updateTextshade(shades[1]);
